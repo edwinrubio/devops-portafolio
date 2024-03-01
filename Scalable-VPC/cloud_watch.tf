@@ -11,7 +11,7 @@ resource "aws_cloudwatch_metric_alarm" "asg_state_change_alarm" {
   alarm_actions       = [aws_sns_topic.autoscaling_update.arn]
 
   dimensions = {
-    AutoScalingGroupName = aws_autoscaling_group.my-autoescaling-group.name
+    AutoScalingGroupName = aws_security_group.app_security_group.name
   }
 }
 
